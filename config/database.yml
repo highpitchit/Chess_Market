@@ -81,10 +81,11 @@ test:
 # You can use this database configuration with:
 #
 #   production:
-#     url: <%= ENV['DATABASE_URL'] %>
+#     
 #
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: src_production
   username: src
   password: <%= ENV['SRC_DATABASE_PASSWORD'] %>
