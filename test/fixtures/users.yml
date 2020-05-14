@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  username: MyString
+  name: MyString
+  ability_level: MyString
+  location: MyString
+
+two:
+  username: MyString
+  name: MyString
+  ability_level: MyString
+  location: MyString
