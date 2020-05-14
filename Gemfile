@@ -54,3 +54,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "devise", "~> 4.7"
+
+# Active-Storage-Cloudinary
+
+gem 'cloudinary', require: false
+gem 'activestorage-cloudinary-service'

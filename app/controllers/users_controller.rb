@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.find(current_user.id)
+
   end
 
   # GET /users/1/edit
@@ -25,6 +26,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    @user.photo.attach(params[:user][:photo])
 
     respond_to do |format|
       if @user.save
@@ -40,6 +42,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+    @user.photo.attach(params[:user][:photo])
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to new_user_path, notice: 'User was successfully updated.' }
