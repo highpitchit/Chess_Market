@@ -7,5 +7,6 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :forums
   has_many :comments
+  has_many :advertises
 
 end

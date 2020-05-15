@@ -1,6 +1,8 @@
+require "active_support/core_ext/date/zones"
+
 class ForumsController < ApplicationController
   before_action :set_forum, only: [:show, :edit, :update, :destroy]
-
+  include DateAndTime::Calculations
   # GET /forums
   # GET /forums.json
   def index
@@ -15,6 +17,7 @@ class ForumsController < ApplicationController
   # GET /forums/new
   def new
     @forum = Forum.new
+    @date = Date.current
   end
 
   # GET /forums/1/edit
