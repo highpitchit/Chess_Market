@@ -1,2 +1,0 @@
-class Advertise < ApplicationRecord
-end
