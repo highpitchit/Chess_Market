@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @forum.date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @forum.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @forum.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @forum.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_forum_path(@forum) %> |
+<%= link_to 'Back', forums_path %>
+
+<h5>Comments</h5>
+<% @forum.comments.each do |comment| %>
+  <p><%= comment.content %></p>
+  <%= link_to "Delete", "/forums/#{@forum.id}/comments/#{comment.id}", method: :delete %>
+<% end %>
+
+<%= form_with(model: Comment.new, local: true, url: "/forums/#{@forum.id}/comments") do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
