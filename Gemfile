@@ -57,5 +57,5 @@ gem "devise", "~> 4.7"
 
 # Active-Storage-Cloudinary
 
-gem 'cloudinary', require: false
+gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
