@@ -28,6 +28,7 @@ class ForumsController < ApplicationController
   # POST /forums.json
   def create
     @forum = Forum.new(forum_params)
+    @forum.user_id = current_user.id
 
     respond_to do |format|
       if @forum.save

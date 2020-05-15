@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   
 
+
+  resources :advertises do
+ 
+  end
   resources :forums do
     post '/comments', to: "comments#create"
     patch '/comments/:comment_id', to: "comments#update"
