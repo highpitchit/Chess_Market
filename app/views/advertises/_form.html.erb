@@ -1,10 +1,10 @@
-<%= form_with(model: forum, local: true) do |form| %>
-  <% if forum.errors.any? %>
+<%= form_with(model: advertise, local: true) do |form| %>
+  <% if advertise.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(forum.errors.count, "error") %> prohibited this forum from being saved:</h2>
+      <h2><%= pluralize(advertise.errors.count, "error") %> prohibited this advertise from being saved:</h2>
 
       <ul>
-        <% forum.errors.full_messages.each do |message| %>
+        <% advertise.errors.full_messages.each do |message| %>
           <li><%= message %></li>
         <% end %>
       </ul>
@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label :job_offer %>
+    <%= form.text_area :job_offer %>
   </div>
 
   <div class="actions">
