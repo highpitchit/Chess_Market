@@ -2,6 +2,13 @@ Rails.application.routes.draw do
   
 
 
+  get 'pages/index'
+  get 'pages/show'
+  get 'pages/new'
+  get 'pages/edit'
+  get 'pages/create'
+  get 'pages/update'
+  get 'pages/destroy'
   resources :advertises do
  
   end
