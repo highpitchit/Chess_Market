@@ -21,8 +21,10 @@
         <td><%= forum.content %></td>
         <td><%= forum.user_id %></td>
         <td><%= link_to 'Show', forum %></td>
+        <% if current_user.id == forum.user_id %>
         <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
         <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Forum', new_forum_path %>
+<%= link_to 'Create New Post', new_forum_path %>
