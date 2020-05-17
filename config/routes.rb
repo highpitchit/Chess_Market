@@ -9,9 +9,7 @@ Rails.application.routes.draw do
   get 'pages/create'
   get 'pages/update'
   get 'pages/destroy'
-  resources :advertises do
- 
-  end
+  resources :advertises 
   resources :forums do
     post '/comments', to: "comments#create"
     patch '/comments/:comment_id', to: "comments#update"
@@ -19,6 +17,7 @@ Rails.application.routes.draw do
     delete '/comments/:comment_id', to: "comments#destroy"
   end
  
+  
   devise_for :users
   resources :users
   root to: "users#index"

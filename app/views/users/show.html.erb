@@ -1,7 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <div class="avatar">
+  <% if @user.photo.attached? %>
     <%= image_tag @user.photo, width: 100 %> 
+  <% end %>
 </div>
 
 <p>
