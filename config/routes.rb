@@ -2,8 +2,9 @@ Rails.application.routes.draw do
   
 
 
+  get 'splashes/home'
   get '/pages/index'
-  get '/pages/show'
+  get '/pages/show', to: "pages#show"
   #get '/users/:id', to: "users#show", as: "profile"
   # patch '/users/:id', to: "users#update"
 
@@ -23,6 +24,6 @@ Rails.application.routes.draw do
   resources :advertises 
   devise_for :users
   resources :users
-  root to: "users#show"
+  root to: "splashes#home"
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

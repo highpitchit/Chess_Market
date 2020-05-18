@@ -2,6 +2,13 @@
 <html>
   <head >
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/css/all.css"></script>
+  </head>
+  <body>
       <nav class="flex items-center justify-between flex-wrap bg-blue-900 p-6 rounded-lg shadow-md">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
           <span class="font-semibold text-xl tracking-tight">Welcome</span>
@@ -17,7 +24,7 @@
               <%=link_to "Home", root_path %>
             </a>
             <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:grey mr-4">
-              <%=link_to "Play Chess", pages_show_path %>
+              <i class="fas fa-chess"></i><%=link_to "Play Chess", pages_show_path %>
             </a>
             <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
               <%=link_to "Tutorials", pages_index_path %>
@@ -44,15 +51,6 @@
           </div>
         </div>
       </nav>
-
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
-  </head>
-
-  <body>
     <p class="notice"><%= notice %></p>
     <%= yield %>
   </body>
