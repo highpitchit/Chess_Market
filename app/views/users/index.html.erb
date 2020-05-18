@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Users</h1>
+<p><%= current_user.username %>
 
 <table>
   <thead>
@@ -31,6 +32,7 @@
 <br>
 
 <%= link_to 'New User', new_user_path %>
+
 <div class="avatar">
   <% if @user.photo.attached? %>
     <%= image_tag @user.photo, width: 100 %> 
@@ -56,6 +58,16 @@
   <strong>Location:</strong>
   <%= @user.location %>
 </p>
+
+<p>
+  <strong>Role:</strong>
+  <% if @user.roles == "player"%>
+      <%= "Player" %>
+    <% else %>
+      <%= "Tutor" %>
+    <% end %>
+</p>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

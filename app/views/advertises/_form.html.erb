@@ -1,3 +1,4 @@
+<div class= "shadow appearance-none bg-gray-400 max-w-xs border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 <%= form_with(model: advertise, local: true) do |form| %>
   <% if advertise.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field max-w-xs shadow bg-white appearance-none border-purple-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <%= form.month_field :date %>
   </div>
 
-  <div class="field">
+  <div class="field max-w-xs shadow bg-white appearance-none border-purple-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.label :title %>
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="field  h-100 max-w-xs shadow bg-white appearance-none border-purple-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.label :job_offer %>
     <%= form.text_area :job_offer %>
   </div>
 
-  <div class="actions">
+  <div class="actions placeholder-transparent rounded-full border bg-white px-2 py-2 w-40 justify-center">
     <%= form.submit %>
   </div>
 <% end %>
+</div>

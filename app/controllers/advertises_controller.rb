@@ -1,5 +1,6 @@
 class AdvertisesController < ApplicationController
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
+  before_action :authorize, only: [:new, :edit, :update]
 
   # GET /advertises
   # GET /advertises.json
@@ -62,6 +63,13 @@ class AdvertisesController < ApplicationController
   end
 
   private
+    def authorize
+      if !current_user.has_role?(:tutor)
+      #if @user.has_role?(:player)
+          flash[:alert] = "Only Tutors can create job advertisements"
+          redirect_to advertises_path
+        end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_advertise
       @advertise = Advertise.find(params[:id])

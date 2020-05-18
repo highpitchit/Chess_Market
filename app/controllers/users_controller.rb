@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:index, :edit, :update, :destroy]
-
+  
   # GET /users
   # GET /users.json
   def index
@@ -44,9 +44,16 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     @user.photo.attach(params[:user][:photo])
+    
+    if params[:user][:role] == "1"
+      @user.add_role(:player)
+    else
+      @user.add_role(:tutor)
+    end
+
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to new_user_path, notice: 'User was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'User was successfully updated.' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }

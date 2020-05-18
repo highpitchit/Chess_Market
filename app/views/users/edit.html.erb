@@ -2,5 +2,8 @@
 
 <%= render 'form', user: @user %>
 
+<p><%= current_user.id %></p>
+<p><%= @user.id %></p>
+
 <%= link_to 'Show', @user %> |
 <%= link_to 'Back', users_path %>

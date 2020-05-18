@@ -5,9 +5,9 @@ Rails.application.routes.draw do
   get 'splashes/home'
   get '/pages/index'
   get '/pages/show', to: "pages#show"
-  #get '/users/:id', to: "users#show", as: "profile"
+  #get '/users/:user_id', to: "users#show", as: "profile"
   # patch '/users/:id', to: "users#update"
-
+  
   # get 'pages/new'
   # get 'pages/edit'
   # get 'pages/create'
