@@ -1,27 +1,49 @@
-<%= form_with(model: forum, local: true) do |form| %>
-  <% if forum.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(forum.errors.count, "error") %> prohibited this forum from being saved:</h2>
+<div class= "shadow appearance-none mb-5 bg-gray-400 max-w-xs border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  <%= form_with(model: forum, local: true) do |form| %>
+    <% if forum.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(forum.errors.count, "error") %> prohibited this forum from being saved:</h2>
 
-      <ul>
-        <% forum.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% forum.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="block text-gray-700 text-sm font-bold mb-2">
+      <%= form.label :date %>
     </div>
-  <% end %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+      <%= form.date_select :date %>
+    </div>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
+    <div class="block text-gray-700 text-sm font-bold mb-2">
+      <%= form.label :topic %>
+    </div>
+    <div class="shadow bg-white rounded w-full py-2 px-3 text-gray-700 leading-tight ">
+      <%= form.text_area :title %>
+    </div>
+    <div class="block text-gray-700 text-sm font-bold mb-2">
+      <%= form.label :question %>
+    </div>
+    <div class="shadow bg-white rounded w-full py-2 px-3 text-gray-700 leading-tight ">
+      <%= form.text_area :content %>
+    </div>
 
-  <div class="field">
-    <%= form.label "Question for the Forum" %>
-    <%= form.text_area :question %>
+    <div class="actions placeholder-transparent flex justify-center font-bold rounded-full mt-6 border bg-white px-2 py-2 w-40 justify-center">
+       <div class="actions">
+    <%= form.submit %>
   </div>
+    </div>
+  <%end%>
+</div>
 
-  <div class="actions">
-    <%= link_to 'Post Question', forums_path %>
-  </div>
-<% end %>
+
+
+
+  
+
+ 
+ 

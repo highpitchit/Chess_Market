@@ -1,26 +1,32 @@
-<p id="notice"><%= notice %></p>
-<%# <p>
-<%= link_to image_tag(user.photo, width: 200), user%>
-<%# </p> %> %>
-<p>
-  <strong>User:</strong>
-  <%= @advertise.user_id %>
-</p>
+  
+<div class="shadow-2xl mt-10 px-4 py-4 mb-4">
+  <div class="flex justify-start mb-4">
+    
+    <% if @advertise.user.photo.attached?%> 
+      <%= image_tag @advertise.user.photo, width:200 %>
+    <% end %></td> 
+  <p>
+  </div>
+    <strong>Tutor:</strong>
+    <%= @advertise.user.username %>
+  </p>
 
-<p>
-  <strong>Date:</strong>
-  <%= @advertise.date %>
-</p>
+  <p>
+    <strong>Date:</strong>
+    <%= @advertise.date %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @advertise.title %>
-</p>
+  <p>
+    <strong>Title:</strong>
+    <%= @advertise.title %>
+  </p>
 
-<p>
-  <strong>Job offer:</strong>
-  <%= @advertise.job_offer %>
-</p>
-
-<%= link_to 'Edit', edit_advertise_path(@advertise) %> |
-<%= link_to 'Back', advertises_path %>
+  <p>
+    <strong>Job offer:</strong>
+    <%= @advertise.job_offer %>
+  </p>
+  <div class= "mt-2">
+    <%= link_to 'Edit', edit_advertise_path(@advertise) %> |
+    <%= link_to 'Back', advertises_path %>
+  </div>
+</div>

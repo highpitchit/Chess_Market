@@ -31,8 +31,10 @@
     <%= form.text_area :job_offer %>
   </div>
 
-  <div class="actions placeholder-transparent font-bold rounded-full mt-6 border bg-white px-2 py-2 w-40 justify-center">
-    <%= link_to "Post Job", advertises_path %>
+  <div class="actions placeholder-transparent flex justify-center font-bold rounded-full mt-6 border bg-white px-2 py-2 w-40 justify-center">
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
 </div>

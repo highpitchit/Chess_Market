@@ -1,6 +1,6 @@
 <h1 class="mt-6 tracking-widest text-sm md:text-4xl upcase flex justify-center">Tutors Available</h1>
  
-<table class="mt-6 bg-white rounded md:flex shadow-lg flex flex-row items-center">
+<table class="mt-6 bg-white rounded md:flex  shadow-2xl flex flex-col items-center">
   <tbody class="mt-4 md:mt-0 md:ml-6">
     <% @advertises.each do |advertise| %>
       <tr>
@@ -17,7 +17,7 @@
         <td><%= link_to 'Show', advertise %></td>
         <td><% if current_user.id == advertise.user_id %>
         <%= link_to 'Edit', edit_advertise_path(advertise) %></td>
-        <td><%= link_to 'Destroy', advertise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td ><%= link_to 'Destroy', advertise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
     <% end %>

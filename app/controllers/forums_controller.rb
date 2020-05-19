@@ -60,7 +60,7 @@ class ForumsController < ApplicationController
   def destroy
     @forum.destroy
     respond_to do |format|
-      format.html { redirect_to forums_url, notice: 'Forum was successfully destroyed.' }
+      format.html { redirect_to forums_path, notice: 'Forum was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -73,6 +73,6 @@ class ForumsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def forum_params
-      params.require(:forum).permit(:date, :title, :content, :user_id, :photo)
+      params.require(:forum).permit(:date, :title, :content, :user_id)
     end
 end

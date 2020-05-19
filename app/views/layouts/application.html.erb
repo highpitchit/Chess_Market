@@ -6,7 +6,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'%>
   </head>
-  <section class="bg-indigo-100 font-mono">
+  <section class="bg-indigo-100 font-mono ">
       <nav class="flex items-center justify-between flex-wrap bg-blue-900 p-6 rounded-lg shadow-md">
         <div class="flex items-center flex-shrink-0 text-white mr-6">
           <span class="font-semibold text-xl tracking-tight">CheckMate</span>
@@ -19,22 +19,20 @@
             <a class=" ">
               <%= link_to "Home", root_path %>
             </a>
-            <a class="block mt-4 sm:inline-block lg:mt-0 text-teal-200 mx-4">
+            <a class="block mt-2 sm:inline-block lg:mt-0 text-teal-200 mx-4">
              <%=link_to "Play Chess", splashes_chess_path %>
             </a>
-            <a class="block mt-4 sm:inline-block lg:mt-0 text-teal-200 mx-4">
-              <%=link_to "Tutorials", pages_index_path %>
-            </a>
-            <a class="block mt-4 sm:inline-block lg:mt-0 text-teal-200 mx-4">
+            <a class="block mt-2 sm:inline-block lg:mt-0 text-teal-200 mx-4">
               <%=link_to "Forum", forums_path %>
             </a>
-            <a class="block mt-4 sm:inline-block lg:mt-0 text-teal-200 mx-4">
-              <%=link_to "Advertise", advertises_path %>
-            </a>
-            <a class="block mt-4 sm:inline-block lg:mt-0 text-teal-200 mx-4">
+            <a class="block mt-2 sm:inline-block lg:mt-0 text-teal-200 mx-4">
               <%=link_to "Profile", users_path %>
             </a>
-            <a class=" inline-block text-sm px-4 py-2 leading-none rounded text-white border-white mt-4 lg:mt-0">    
+            <a class="block mt-2 sm:inline-block lg:mt-0 text-teal-200 mx-4">
+              <%=link_to "Advertise", advertises_path %>
+            </a>
+            
+            <a class="block mt-2 sm:inline-block lg:mt-0 text-teal-200 mx-4">    
               <% if user_signed_in? %>
                 <%=link_to "Sign Out", destroy_user_session_path, method: :delete %>
               <% else %>

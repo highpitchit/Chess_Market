@@ -10,3 +10,4 @@ User.create(email: "test@test.com", password: "123456")
 
 Role.create(name: "tutor")
 Role.create(name: "player")
+
