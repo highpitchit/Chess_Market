@@ -1,3 +1,4 @@
+<div class= "shadow appearance-none bg-gray-400 max-w-xs border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
 <%= form_with(model: advertise, local: true) do |form| %>
   <% if advertise.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +12,29 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="block text-gray-700 text-sm font-bold mb-2">
     <%= form.label :date %>
-    <%= form.date_select :date %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+    <%= form.month_field :date %>
+    </div>
   </div>
 
-  <div class="field">
+  <div class="block text-gray-700 text-sm font-bold mb-2 w-100">
     <%= form.label :title %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="block text-gray-700 text-sm font-bold mt-2 mb-2 w-100">
     <%= form.label :job_offer %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.text_area :job_offer %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions placeholder-transparent flex justify-center font-bold rounded-full mt-6 border bg-white px-2 py-2 w-40 justify-center">
+    <div class="actions">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
+</div>

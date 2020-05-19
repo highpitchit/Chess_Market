@@ -1,6 +1,7 @@
 class AdvertisesController < ApplicationController
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
-
+  before_action :authorize, only: [:new, :edit, :update]
+  
   # GET /advertises
   # GET /advertises.json
   def index
@@ -10,6 +11,7 @@ class AdvertisesController < ApplicationController
   # GET /advertises/1
   # GET /advertises/1.json
   def show
+   
   end
 
   # GET /advertises/new
@@ -40,6 +42,7 @@ class AdvertisesController < ApplicationController
   # PATCH/PUT /advertises/1
   # PATCH/PUT /advertises/1.json
   def update
+    
     respond_to do |format|
       if @advertise.update(advertise_params)
         format.html { redirect_to @advertise, notice: 'Advertise was successfully updated.' }
@@ -62,6 +65,13 @@ class AdvertisesController < ApplicationController
   end
 
   private
+    #Only Tutors can create Job advertisements
+    def authorize
+      if current_user.has_role?(:player)
+          flash[:alert] = "Unauthorized"
+          redirect_to advertises_path
+        end
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_advertise
       @advertise = Advertise.find(params[:id])

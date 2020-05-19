@@ -59,3 +59,5 @@ gem "devise", "~> 4.7"
 
 gem 'cloudinary'
 gem 'activestorage-cloudinary-service'
+
+gem "rolify", "~> 5.2"

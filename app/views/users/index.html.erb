@@ -1,61 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Username</th>
-      <th>Name</th>
-      <th>Ability level</th>
-      <th>Location</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.username %></td>
-        <td><%= user.name %></td>
-        <td><%= user.ability_level %></td>
-        <td><%= user.location %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<h1 class="mt-6 tracking-widest text-sm md:text-4xl upcase flex justify-center">Profile</h1>
+<div class = "mt-6 bg-white rounded shadow-2xl max-w-xs py-6 px-20 w-50">
+  <div class="avatar">
+    <% if @user.photo.attached? %>
+      <%= image_tag @user.photo, width: 200 %> 
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  <p>
+    <strong>Username:</strong>
+    <%= @user.username %>
+  </p>
 
-<%= link_to 'New User', new_user_path %>
-<div class="avatar">
-  <% if @user.photo.attached? %>
-    <%= image_tag @user.photo, width: 100 %> 
-  <% end %>
-</div>
+  <p>
+    <strong>Name:</strong>
+    <%= @user.name %>
+  </p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @user.username %>
-</p>
+  <p>
+    <strong>Ability level:</strong>
+    <%= @user.ability_level %>
+  </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+  <p>
+    <strong>Location:</strong>
+    <%= @user.location %>
+  </p>
 
-<p>
-  <strong>Ability level:</strong>
-  <%= @user.ability_level %>
-</p>
+  <p>
+    <strong>Role:</strong>
+    <% if current_user.has_role?(:player) %>
+        <%= "Player" %>
+      <% else %>
+        <%= "Tutor" %>
+      <% end %>
+  </p>
 
-<p>
-  <strong>Location:</strong>
-  <%= @user.location %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+  </div>
