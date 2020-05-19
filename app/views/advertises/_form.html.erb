@@ -12,23 +12,27 @@
     </div>
   <% end %>
 
-  <div class="field max-w-xs shadow bg-white appearance-none border-purple-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  <div class="block text-gray-700 text-sm font-bold mb-2">
     <%= form.label :date %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.month_field :date %>
+    </div>
   </div>
 
-  <div class="field max-w-xs shadow bg-white appearance-none border-purple-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  <div class="block text-gray-700 text-sm font-bold mb-2 w-100">
     <%= form.label :title %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.text_field :title %>
   </div>
 
-  <div class="field  h-100 max-w-xs shadow bg-white appearance-none border-purple-400 rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+  <div class="block text-gray-700 text-sm font-bold mt-2 mb-2 w-100">
     <%= form.label :job_offer %>
+    <div class="shadow appearance-none bg-white border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     <%= form.text_area :job_offer %>
   </div>
 
-  <div class="actions placeholder-transparent rounded-full border bg-white px-2 py-2 w-40 justify-center">
-    <%= form.submit %>
+  <div class="actions placeholder-transparent font-bold rounded-full mt-6 border bg-white px-2 py-2 w-40 justify-center">
+    <%= link_to "Post Job", advertises_path %>
   </div>
 <% end %>
 </div>

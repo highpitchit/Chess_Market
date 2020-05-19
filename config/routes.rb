@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
 
   get 'splashes/home'
+  get 'splashes/chess'
+  get 'splashes/home'
   get '/pages/index'
   get '/pages/show', to: "pages#show"
   #get '/users/:user_id', to: "users#show", as: "profile"

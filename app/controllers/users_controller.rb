@@ -43,13 +43,18 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
-    @user.photo.attach(params[:user][:photo])
     
-    if params[:user][:role] == "1"
-      @user.add_role(:player)
-    else
+    # 
+    if params[:role] == "3"
       @user.add_role(:tutor)
+      @user.remove_role(:player)
+    elsif params[:role] == "4"
+      @user.add_role(:player)
+      @user.remove_role(:player)
     end
+   
+    # # @user.add_role(params[:user][:role])
+    @user.photo.attach(params[:user][:photo])
 
     respond_to do |format|
       if @user.update(user_params)

@@ -17,16 +17,11 @@
   </div>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :content %>
-    <%= form.text_area :content %>
+    <%= form.label "Question for the Forum" %>
+    <%= form.text_area :question %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= link_to 'Post Question', forums_path %>
   </div>
 <% end %>
