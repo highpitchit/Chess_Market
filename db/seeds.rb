@@ -8,4 +8,5 @@
 
 User.create(email: "test@test.com", password: "123456")
 
-Role.delete_all
+Role.create(name: "tutor")
+Role.create(name: "player")
