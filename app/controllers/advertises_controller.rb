@@ -1,6 +1,7 @@
 class AdvertisesController < ApplicationController
   before_action :set_advertise, only: [:show, :edit, :update, :destroy]
-  before_action :authorize, only: [:new, :edit, :update]
+  #creates before action to only allow tutors to access create
+  before_action :authorize, only: [:new, :edit, :update, :create]
   
   # GET /advertises
   # GET /advertises.json

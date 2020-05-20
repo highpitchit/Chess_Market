@@ -16,6 +16,7 @@ class ForumsController < ApplicationController
 
   # GET /forums/new
   def new
+    #creates new forum post
     @forum = Forum.new
     @date = Date.current
   end

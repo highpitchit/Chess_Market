@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
+    #attaches image to the user profile
     @user.photo.attach(params[:user][:photo])
 
     respond_to do |format|
@@ -44,7 +45,7 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1.json
   def update
     
-    # 
+    #when user selects tutor or player the other role will be removed
     if params[:role] == "11"
       @user.add_role(:tutor)
       @user.remove_role(:player)

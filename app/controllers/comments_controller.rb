@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
-
   before_action :manage_comment, only: [:show, :destroy]
 
   def create
+    #comments are created on the forum#show. Method to create comments on forum#show page
     @comment = Comment.new(comment_params)
     @comment.forum_id = params[:forum_id]
     @comment.user_id = current_user.id
@@ -18,6 +18,7 @@ class CommentsController < ApplicationController
   end
 
   def destroy
+    #after deleting comment redirected to forums#show page
     @comment.delete
     redirect_to "/forums/#{params[@forum_id]}"
   end
