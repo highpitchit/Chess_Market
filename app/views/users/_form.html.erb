@@ -11,44 +11,43 @@
         </ul>
       </div>
     <% end %>
-
-    <p>
-      <%= form.label :photo %>
-      <%= form.file_field :photo %>
-    </p>
-
-    <div class="field">
-      <%= form.label :username %>
-      <%= form.text_field :username %>
-    </div>
-
-    <div class="field">
-      <%= form.label :name %>
-      <%= form.text_field :name %>
-    </div>
-
-    <div class="field">
-      <%= form.label :location %>
-      <%= form.select :location, ["Australia", "Japan", "New Zealand", 
-      "South Africa", "South Korea", "United Kingdom", "USA"]%>
+    <div class = "text-sm">
+      <p>
+        <%= form.label :photo %>
+        <%= form.file_field :photo %>
+      </p>
       
-    </div>
+      <div class="field">
+        <%= form.label :username %>
+        <%= form.text_field :username %>
+      </div>
 
-    <div class="field">
-      <%= form.label :ability_level %>
-      <p><%= form.radio_button :ability_level, "Beginner" %>  Beginner</p>
-      <p><%= form.radio_button :ability_level, "Intermediate" %> Intermediate</p>
-      <p><%= form.radio_button :ability_level, "Advanced" %> Advanced</p>
-    </div>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+      </div>
 
-    <div class="field">
-      <%= form.label :Role %>
-      <%= select_tag "role", options_from_collection_for_select(Role.all, "id", "name") %>
-    </div>
+      <div class="field">
+        <%= form.label :location %>
+        <%= form.select :location, ["Australia", "Japan", "New Zealand", 
+            "South Africa", "South Korea", "United Kingdom", "USA"]%> 
+      </div>
 
-    <div class="actions">
-      <%= form.submit %>
-    </div>
-    
+      <div class="field">
+        <%= form.label :ability_level %>
+          <p><%= form.radio_button :ability_level, "Beginner" %>  Beginner</p>
+          <p><%= form.radio_button :ability_level, "Intermediate" %> Intermediate</p>
+          <p><%= form.radio_button :ability_level, "Advanced" %> Advanced</p>
+      </div>
+
+      <div class="field">
+        <%= form.label :Role %>
+        <%= select_tag "role", options_from_collection_for_select(Role.all, "id", "name") %>
+      </div>
+
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+    </div>    
   <% end %>
 </div>
