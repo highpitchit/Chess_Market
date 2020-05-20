@@ -11,41 +11,47 @@
         </ul>
       </div>
     <% end %>
-    <div class = "text-sm">
+    <div class = "text-sm my-2">
       <p>
         <%= form.label :photo %>
         <%= form.file_field :photo %>
       </p>
       
-      <div class="field">
+      <div class="field my-2">
         <%= form.label :username %>
+      <p class="mr-2">
         <%= form.text_field :username %>
+      </p>
       </div>
 
-      <div class="field">
+      <div class="field my-2">
         <%= form.label :name %>
+      <p class="mr-2">
         <%= form.text_field :name %>
+      </p>
       </div>
 
-      <div class="field">
+      <div class="field my-2">
         <%= form.label :location %>
+      <p class="mr-2">
         <%= form.select :location, ["Australia", "Japan", "New Zealand", 
             "South Africa", "South Korea", "United Kingdom", "USA"]%> 
+      </p>
       </div>
 
-      <div class="field">
+      <div class="field my-2">
         <%= form.label :ability_level %>
           <p><%= form.radio_button :ability_level, "Beginner" %>  Beginner</p>
           <p><%= form.radio_button :ability_level, "Intermediate" %> Intermediate</p>
           <p><%= form.radio_button :ability_level, "Advanced" %> Advanced</p>
       </div>
 
-      <div class="field">
+      <div class="field my-2">
         <%= form.label :Role %>
         <%= select_tag "role", options_from_collection_for_select(Role.all, "id", "name") %>
       </div>
 
-      <div class="actions">
+      <div class="actions my-2">
         <%= form.submit %>
       </div>
     </div>    

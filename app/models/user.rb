@@ -9,5 +9,11 @@ class User < ApplicationRecord
   has_many :forums
   has_many :comments
   has_many :advertises
+  after_create :assign_default_role
+
+
+  def assign_default_role
+    add_role :player
+  end
 
 end

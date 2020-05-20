@@ -45,14 +45,15 @@ class UsersController < ApplicationController
   def update
     
     # 
-    if params[:role] == "3"
+    if params[:role] == "1"
       @user.add_role(:tutor)
       @user.remove_role(:player)
-    elsif params[:role] == "4"
+      @user.save
+    elsif params[:role] == "2"
       @user.add_role(:player)
-      @user.remove_role(:player)
+      @user.remove_role(:tutor)
     end
-   
+    @user.save
     # # @user.add_role(params[:user][:role])
     @user.photo.attach(params[:user][:photo])
 
