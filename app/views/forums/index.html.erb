@@ -7,11 +7,12 @@
   <tbody class="mt-4 md:mt-0 md:ml-6">
     <% @forums.each do |forum| %>
       <tr>
-        <td class="text-xs text-gray-600 flex items-center"><%= forum.date %></td>
-        <td class="mt-1 text-md leading-tight font-semibold text-gray-900"><%= forum.title %></td>
-        <td class="mt-2 text-gray-600"><%= forum.content %></td>
-        <td class="text-sm text-gray-600 flex items-center"><%= forum.user.username %></td>
-        <td><%= link_to 'Show', forum %></td>
+        <td class="text-xs text-gray-500 flex items-center"><%= forum.date %></td>
+        <td class="mt-1 pl-5 text-md leading-tight font-semibold text-gray-900"><%= forum.title %></td>
+        <td class="mt-2 pl-5 text-gray-600"><%= forum.content %></td>
+        <td class="pl-5 text-gray-500"> <%= forum.user.username %></td>
+        <td class="text-sm text-gray-600 flex items-center pl-10">
+        <%= link_to 'Show / Add Comment', forum %></td>
         <% if current_user.id == forum.user_id %>
         <td><%= link_to 'Edit', edit_forum_path(forum) %></td>
         <td><%= link_to 'Destroy', forum, method: :delete, data: { confirm: 'Are you sure?' } %></td>

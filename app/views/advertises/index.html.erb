@@ -6,17 +6,17 @@
       <tr>
         <td class="max-w-sm">
           <% if advertise.user.photo.attached?%> 
-          <%= image_tag advertise.user.photo %>
+          <%= image_tag advertise.user.photo, width:150 %>
           <% end %></td>       
         <td class=" mt-1 text-md leading-tight font-semibold text-gray-900"><%= advertise.title %></td>
         <td class="mt-2 text-gray-600"><%= advertise.job_offer %></td>
-        <td class="uppercase text-sm text-gray-600 flex items-center"><%= advertise.user.username %></td>
+        <td class="mt-6 uppercase text-sm text-gray-600 flex items-center"><%= advertise.user.username %></td>
         <%# <td><%= advertise.date</td> %> 
-        <td class=" text-sm text-gray-600 flex items-center">Email: <%= advertise.user.email %></td>
+        <td class=" text-sm text-gray-600 flex ">Email: <%= advertise.user.email %></td>
         <td></td>
         <td><%= link_to 'Show', advertise %></td>
         <td><% if current_user.id == advertise.user_id %>
-        <%= link_to 'Edit', edit_advertise_path(advertise) %></td>
+        <%= link_to '|Edit|', edit_advertise_path(advertise) %></td>
         <td ><%= link_to 'Destroy', advertise, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
       </tr>
