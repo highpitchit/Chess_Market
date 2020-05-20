@@ -8,5 +8,4 @@
 
 User.create(email: "test@test.com", password: "123456")
 
-
-
+Role.delete_all
